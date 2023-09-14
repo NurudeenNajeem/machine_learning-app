@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine learning</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            border-radius: 4px;
+            border: 1px solid transparent;
+            background-clip: border-box!important;
+            background-origin: border-box!important;
+            background: #79589f;
+            color: #fff;
+
+            
+        }
+        input,button{
+            width: 150px;
+            padding: 5px 10px;
+        }
+        .container{
+            width: 100%;
+            
+        }
+        hr{
+            margin-top: 10px;
+            border: 1px solid #79589f;
+        }
+        form,h2,h3{
+            margin-left: 30px;
+            
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            background-color: #79589f;
+            width: 100%;
+        }
+        p{
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{name}}
+
+        <h2 style="color:#79589f; padding-bottom: 20px; font-weight: 800; margin-top:20px; ">Prediction for revenue</h2>
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" placeholder="Enter value for temperature" name="temperature">
+            <button type="submit" style="margin-top: 20px;">Submit</button>
+        </form>
+        <hr>
+        <h3 style="color:#79589f; padding-top: 20px; "> {{prediction}}</h3>
+    </div>
+    <footer>
+        
+        <p style="padding:10px ; ">Created by Nurudeen Najeem : najeemnnurudeen7@gmail.com </p>
+        <p style="padding:10px ; ">{{ curent_day }}</p>
+
+    </footer>
+</body>
+</html>
